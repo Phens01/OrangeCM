@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+{% load static%}
+
+{% block content%}
+  <!--<h1 class="text-center mt-3">Tableau de bord</h1> -->
+
+  <div class="container">
+    <div class="row">
+      {% for client in list_clients %}
+      <div class="col-12 col-md-6 col-lg-3 col-xl-3">
+        <div class="card mb-3 p-2">
+
+          <!-- Card content -->
+          <div class="card-body" style="height: 250px;">
+
+            <!-- Title -->
+            <h5 class="card-title"><a href="{% url 'detail' client.id %}">{{client.name}}</a></h5>
+            <!-- Texte -->
+            <p class="card-text">{{client.ville}}</p>
+            <p class="card-text"> Enregistré il y'a {{client.date_added|timesince}}</p>
+            
+          </div>
+        </div>
+        <!-- Card -->
+      </div>
+        {% endfor %}
+
+    </div>
+  </div>
+
+{% endblock %}

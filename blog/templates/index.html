@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% load static%}
+
+{% block content%}
+  <h1 class="text-center mt-3">Bienvenue dans la communauté Orange Cameroun</h1>
+  <main class="my-5">
+    <div class="container text-center">
+      <img
+        src="{% static 'img/beyond.png' %}"
+        class="me-2"
+        height="500"
+        alt="Beyond Logo"
+        loading="lazy"
+      />
+    </div>
+  </main>
+
+{% endblock %}
